@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mon morphing*/
+  .morphing {
+    position: relative;
+    font-size: 35px;
+    background-color: rgba(0, 0, 0, 0.705);
+    color: rgb(252, 252, 252);
+    min-height: 18vh;
+    filter: contrast(25) blur(0.5px) ; 
+  }
+  
+  /* les éléments qui seront affichés */
+  .word {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: word 14s infinite ease-in-out;
+  }
+
+/* Délai d'apparition en fonction de la position des mes élément dans l'HTML */
+  .word:nth-child(1) {
+    animation-delay: -12s;
+  }
+  .word:nth-child(2) {
+    animation-delay: -8s;
+  }
+
+  /* Animation morphing */
+@keyframes word {
+    0%, 5%, 100% {
+              filter: blur(0px);
+      opacity: 1;
+    }
+    20%, 80% {
+              filter: blur(1em);
+      opacity: 0;
+    }
+  }
